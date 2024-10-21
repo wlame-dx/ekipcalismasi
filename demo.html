@@ -122,3 +122,31 @@ transform: translate(-50%,-50%);
 <div class="name">By ZEXSON TEAM</div>
   </div>
 </div>
+<script>
+window.onload = function() {
+    // Elementleri seçiyoruz
+ var loadPage = document.querySelector(".load");
+    var cardElement = document.querySelector(".e-card");
+
+    // Elemanların varlığını kontrol et
+    if (!loadPage || !cardElement) {
+        console.error("Elementlerden biri bulunamadı. Class isimlerini kontrol edin.");
+        return;
+    }
+
+    console.log("Elementler başarıyla yüklendi.");
+
+    // Sayfa yüklendiğinde card ve sifre-error elementlerini gizle
+    cardElement.style.display = "none"; // Card'ı gizle
+    loadPage.style.display = "none"; // Hata mesajını gizle
+
+// 5 saniye sonra sifre-error elementini gizle
+            setTimeout(function() {
+                cardElement.style.display = "block"; // Hata mesajını gizle
+loadPage.style.display = "none";
+                console.log("4 saniye sonra hata mesajı kapatıldı.");
+            }, 4000); // 5000 ms = 5 saniye
+        }
+    });
+};
+</script>
